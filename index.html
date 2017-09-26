@@ -124,11 +124,10 @@
 				$(".closeTo").on("click",function(){
 					$(".list_modelTO").removeClass("hidder").addClass("show")
 				});
-				$(".list_box").eq(0).find("li").last().on("click",function() {
-					$('body,html').animate({
-						scrollTop: 0
-					}, 1000);
-				});
+				
+				$('.list_box').click(function(){
+				    $('html,body').animate({scrollTop:'0px'},500)
+				})
 				$(".close").on("click",close)					
 				$(".left").on("click",left)
 				$(".right").on("click",right)
