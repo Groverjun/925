@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		/* 整个容器，包括透视 */
+		.flip-container {
+		    perspective: 1000;
+		}
+		.flip-container, .front, .back {
+		    width: 320px;
+		    height: 480px;
+		}
+		
+		/* 翻转速度设置 */
+		.flipper {
+		    transition: 1.5s;
+		    transform-style: preserve-3d;		
+		    position: relative;
+		}
+		
+		/* 翻转页的时候隐藏背面 */
+		.front, .back {
+		    backface-visibility: hidden;		
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		}
+		
+		/* 前面板放在上面 */
+		/*.front {
+		    z-index: 2;
+
+		    transform: rotateY(0deg);
+		}*/
+		
+		/* 背面初始的时候隐藏 */
+		.back {
+		    transform: rotateY(180deg);
+		}
+
+
+	</style>
+
+	<body>
+		<div class="container">
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+				<div class="flipper">
+					<div class="front">
+						<img src="img/1.jpg"/ width="100%">
+					</div>
+					<div class="back">
+						<img src="img/3.jpg"/ width="100%">
+					</div>
+				</div>
+				<div>
+					<button id="abt" style="margin-top: 500px;">点击</button>
+					<button id="abt1" style="margin-top: 500px;">点击2</button>
+				</div>
+			</div>
+
+		</div>
+		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$("#abt").click(function(){
+				if($(".flipper").css("transform")){
+					$(".flipper").css("transform","rotateY(180deg)")
+				}
+			})
+				$("#abt1").click(function(){
+				if($(".flipper").css("transform")){
+					$(".flipper").css("transform","rotateY(0deg)")
+				}
+			})
+		</script>
+	</body>
+
+</html>
