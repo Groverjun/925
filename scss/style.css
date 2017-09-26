@@ -140,12 +140,12 @@ input, textarea {
     .list_model .listModel_box .model_flip {
       width: 100%;
       display: flex;
-      padding: 10px  30%;
+      padding: 10px  15%;
       justify-content: space-between;
       align-items: center; }
       .list_model .listModel_box .model_flip a {
-        width: 30px;
-        height: 30px; }
+        width: 45px;
+        height: 45px; }
         .list_model .listModel_box .model_flip a > img {
           width: 100%; }
     .list_model .listModel_box > h6 {
